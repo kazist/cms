@@ -1,7 +1,7 @@
 {
     "frontend": [{
             "title": "Articles List",
-            "description": "Management of Articles.",
+            "description": "Manage Articles.",
             "controller": "Cms\\Addons\\Article\\Controllers\\ArticleController::indexAction",
             "permissions": "can_view, can_viewown",
             "unique_name": "cms.addons.article",
