@@ -1,0 +1,143 @@
+{
+    "frontend": [{
+            "title": "Category List",
+            "description": "Management of Categories.",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\CategoriesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.sliders.categories",
+            "route": "cms/sliders/categories",
+            "arguments": "",
+            "keywords": "category, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Jobs\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::taskAction",
+            "unique_name": "admin.cms.sliders.categories.task",
+            "route": "admin/cms/sliders/categories/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "categories, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Category List",
+            "description": "Management of Categories.",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.sliders.categories",
+            "route": "admin/cms/sliders/categories",
+            "arguments": "",
+            "keywords": "category, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Category",
+            "description": "Add Category.",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::addAction",
+            "unique_name": "admin.cms.sliders.categories.add",
+            "route": "admin/cms/sliders/categories/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "category, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Category {{ item.name }}",
+            "description": "Edit Category {{ item.name }}.",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::editAction",
+            "unique_name": "admin.cms.sliders.categories.edit",
+            "route": "admin/cms/sliders/categories/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "category, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Category Detail: {{ item.name }}",
+            "description": "Category Detail: {{ item.name }}",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::detailAction",
+            "unique_name": "admin.cms.sliders.categories.detail",
+            "route": "admin/cms/sliders/categories/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "category, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Category Delete: {{ item.name }}",
+            "description": "Category Delete: {{ item.name }}",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::deleteAction",
+            "unique_name": "admin.cms.sliders.categories.delete",
+            "route": "admin/cms/sliders/categories/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "category, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Category Save: {{ item.name }}",
+            "description": "Category Save: {{ item.name }}",
+            "controller": "Cms\\Sliders\\Categories\\Code\\Controllers\\Admin\\CategoriesController::saveAction",
+            "unique_name": "admin.cms.sliders.categories.save",
+            "route": "admin/cms/sliders/categories/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "category, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

@@ -1,0 +1,76 @@
+
+<div class="col-sm-2">
+    <h4>Top Categories</h4>
+    <div class="menu-categories-articles">
+        {% if categories|length > 0 %}
+            {% for category in categories %}
+
+                {% set category_url =  generate_url('cms.articles.categories.detail', {'id': category.id}) %}
+
+                <div class="menu-categories-article">
+                    <a href="{{ category_url }}" title="{{ category.title }}">
+                        <b>{{ category.title|truncate(30) }}</b>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<div class="col-sm-4">
+    <h4>Most Latest Article</h4>
+    <div class="menu-article-main">
+        {% set item_url =  generate_url('cms.articles.detail', {'id': items.0.id}) %}
+
+        <a href="{{ item_url }}"title="{{ items.0.title }}">
+            <img src="{{ resized_image(items.0.article_image.file,300,170 ) }}" alt="{{ items.0.title }}" title="{{ items.0.title }}" align="left" width="150px"/>
+        </a>
+
+        <a href="{{ item_url }}" title="{{ items.0.title }}">
+            <b>{{ items.0.title|truncate(50) }}</b>
+        </a>
+        {#
+        <div class="cms-item-addition">
+            <i class="fa fa-clock-o"></i> 
+            <small> Posted:  {{ items.0.date_created|date('d M Y H:i') }}</small>
+            <br>
+        </div>
+       #}
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="col-sm-6">
+    <h4>Past Article</h4>
+    <div class="menu-articles">
+        {% if items|length > 0 %}
+            {% for key,item in items %}
+                {% if key %}
+                    {% set item_url =  generate_url('cms.articles.detail', {'id': item.id}) %}
+
+                    <div class="col-sm-6">
+                        <div class="menu-article">
+
+
+                            <a href="{{ item_url }}"title="{{ item.title }}">
+                                <img src="{{ resized_image(item.article_image.file,100, 100) }}" alt="{{ item.title }}" title="{{ item.title }}" align="left" width="150px"/>
+                            </a>
+
+                            <a href="{{ item_url }}" title="{{ item.title }}">
+                                <b>{{ item.title|truncate(50) }}</b>
+                            </a>
+
+                            <div class="cms-item-addition">
+                                <i class="fa fa-clock-o"></i> 
+                                <small> Posted:  {{ item.date_created|date('d M Y H:i') }}</small>
+                                <br>
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

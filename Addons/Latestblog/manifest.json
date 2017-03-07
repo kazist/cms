@@ -1,0 +1,10 @@
+{
+    "name": "latestblog",
+    "title": "Latestblog Listing",
+    "explanation": "Latestblog Listing",
+    "description": "Latestblog Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/latestblog\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/latestblog\/"
+}

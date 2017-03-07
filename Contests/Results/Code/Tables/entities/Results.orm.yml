@@ -1,0 +1,85 @@
+Cms\Contests\Results\Code\Tables\Results:
+  table: cms_contests_results
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    contest_id:
+      name: contest_id
+      type: integer
+      length: 11
+      nullable: false
+    blog_id:
+      name: blog_id
+      type: integer
+      length: 11
+      nullable: false
+    category_id:
+      name: category_id
+      type: integer
+      length: 11
+      nullable: false
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    contest_season:
+      name: contest_season
+      type: integer
+      length: 11
+      nullable: false
+    properties:
+      name: properties
+      type: text
+      nullable: true
+    total_points:
+      name: total_points
+      type: integer
+      length: 11
+      nullable: true
+    total_values:
+      name: total_values
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    contest_id_index:
+      columns: [contest_id]
+    blog_id_index:
+      columns: [blog_id]
+    category_id_index:
+      columns: [category_id]
+    user_id_index:
+      columns: [user_id]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

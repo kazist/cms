@@ -1,0 +1,10 @@
+{
+    "name": "contestslider",
+    "title": "Contestslider Listing",
+    "explanation": "Contestslider Listing",
+    "description": "Contestslider Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/contestslider\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/contestslider\/"
+}

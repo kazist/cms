@@ -1,0 +1,123 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::taskAction",
+            "unique_name": "admin.cms.contests.points.task",
+            "route": "admin/cms/contests/points/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "points, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Point List",
+            "description": "Management of Points.",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.contests.points",
+            "route": "admin/cms/contests/points",
+            "arguments": "",
+            "keywords": "point, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Point  ",
+            "description": "Add Point .",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::addAction",
+            "unique_name": "admin.cms.contests.points.add",
+            "route": "admin/cms/contests/points/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "point,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Point {{ item.name }}",
+            "description": "Edit Point {{ item.name }}.",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::editAction",
+            "unique_name": "admin.cms.contests.points.edit",
+            "route": "admin/cms/contests/points/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "point, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Point Detail: {{ item.name }}",
+            "description": "Point Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::detailAction",
+            "unique_name": "admin.cms.contests.points.detail",
+            "route": "admin/cms/contests/points/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "point, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Point Delete: {{ item.name }}",
+            "description": "Point Delete: {{ item.name }}",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::deleteAction",
+            "unique_name": "admin.cms.contests.points.delete",
+            "route": "admin/cms/contests/points/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "point, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Point Save: {{ item.name }}",
+            "description": "Point Save: {{ item.name }}",
+            "controller": "Cms\\Contests\\Points\\Code\\Controllers\\Admin\\PointsController::saveAction",
+            "unique_name": "admin.cms.contests.points.save",
+            "route": "admin/cms/contests/points/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "point, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

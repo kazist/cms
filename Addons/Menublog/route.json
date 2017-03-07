@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Menu blog List",
+            "description": "Management of Menu blog.",
+            "controller": "Cms\\Addons\\Menublog\\Controllers\\MenublogController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.addons.menublog",
+            "route": "cms/addons/menublog",
+            "arguments": "",
+            "keywords": "banner, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

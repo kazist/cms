@@ -1,0 +1,33 @@
+
+{{ set_assets('applications/Cms/Addons/Columnist/assets/css/style.css') }}
+
+<div class="block-columnists">
+    {% if columnists|length > 0 %}
+        {% for columnist in columnists %}
+            <div class="columnist">
+                <a href="{{ generate_url('cms.blogs.columnists.detail', {'id': columnist.id}) }}" title='{{ columnist.title }}'>
+                    <img src="{{ resized_image(columnist.avatar_file,48,48) }}" alt="{{ columnist.title }}" title="{{ columnist.title }}" align="left" width="48px"/>
+                </a>
+                <h4>
+                    <a href="{{ generate_url('cms.blogs.columnists.detail', {'id': columnist.id}) }}" title='{{ columnist.title }}'>
+                        {{ columnist.name|capitalize|raw  }}
+                    </a>
+                </h4>
+
+                {% if columnist.blogs|length > 0 %}
+                    {% for blog in columnist.blogs %}  
+                        <a href="{{ generate_url('cms.blogs.detail', null, 0, blog) }}" title='{{ blog.title }}'>
+                            {{ blog.title|capitalize|raw  }}
+                        </a><br>
+                    {% endfor %}
+                {% else %}
+                    No Latest Blogs
+                {% endif %}
+
+                <div class="clearfix"></div>  
+            </div>
+        {% endfor %}
+    {% else %}
+        No Latest Columnists
+    {% endif %}
+</div>

@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2015, 4:22:26 PM
+    Author     : sbc
+*/
+.block-articles {
+    padding:5px;
+}
+
+.block-articles .article{
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom:1px dotted #ddd;
+}
+
+.block-articles .article:hover{
+    background: #eee;
+}
+
+.block-articles .article img{
+    margin:5px;
+}
+
+
+.block-articles .article h4{
+    margin:0;
+    font-size:20px;
+    color:#333;
+}
+.block-articles .article h4 a{
+    color:#333;
+}
+
+.block-articles .article small{
+    color:#999;
+}
+
+.block-tabular-articles .tabular-article{
+    margin-bottom: 20px;
+    border-bottom:1px dotted #bbb;
+}
+
+.block-tabular-articles .tabular-article h4{
+    height: 30px;
+}

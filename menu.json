@@ -1,0 +1,74 @@
+{
+    "title": "CMS",
+    "description": "Content Management System ",
+    "alias": "cms",
+    "icon": "fa-picture-o",
+    "home_link": "cms\/articles",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Articles",
+            "alias": "admin_cms_articles",
+            "url": "admin/cms/articles",
+            "children": [{
+                    "title": "Categories",
+                    "alias": "admin_cms_articles_categories",
+                    "url": "admin/cms/articles/categories",
+                    "children": []
+                }, {
+                    "title": "Contests",
+                    "alias": "admin_cms_articles_contests",
+                    "url": "admin/cms/articles/contests",
+                    "children": []
+                }]
+        }, {
+            "title": "Blogs",
+            "alias": "admin_cms_blogs",
+            "url": "admin/cms/blogs",
+            "children": [{
+                    "title": "Categories",
+                    "alias": "admin_cms_blogs_categories",
+                    "url": "admin/cms/blogs/categories",
+                    "children": []
+                }, {
+                    "title": "Columinists",
+                    "alias": "admin_cms_blogs_columnists",
+                    "url": "admin/cms/blogs/columnists",
+                    "children": []
+                }, {
+                    "title": "Contests",
+                    "alias": "admin_cms_blogs_contests",
+                    "url": "admin/cms/blogs/contests",
+                    "children": []
+                }, {
+                    "title": "Abuses",
+                    "alias": "admin_cms_blogs_abuses",
+                    "url": "admin/cms/blogs/abuses",
+                    "children": []
+                }, {
+                    "title": "Tags",
+                    "alias": "admin_cms_blogs_tags",
+                    "url": "admin/cms/blogs/tags",
+                    "children": []
+                }]
+        }, {
+            "title": "Contests",
+            "alias": "admin_cms_contests",
+            "url": "admin/cms/contests",
+            "children": [{
+                    "title": "Categories",
+                    "alias": "admin_cms_contests_categories",
+                    "url": "admin/cms/contests/categories",
+                    "children": []
+                }]
+        }, {
+            "title": "Sliders",
+            "alias": "admin_cms_sliders",
+            "url": "admin/cms/sliders",
+            "children": []
+        }, {
+            "title": "Tags",
+            "alias": "admin_cms_tags",
+            "url": "admin/cms/tags",
+            "children": []
+        }]
+}

@@ -1,0 +1,84 @@
+
+<div>
+    <div class="col-sm-6 most_latest_blogs">
+        {% if most_latest_blogs.title != '' %}
+            <div class="image_container">
+                <a href="{{ generate_url('cms.articles.detail', {'id': most_latest_blogs.id}) }}" title="{{ most_latest_blogs.title }}">
+                    <img src="{{ resized_image(most_latest_blogs.blog_image,300,300) }}" alt="{{ most_latest_blogs.title }}" title="{{ most_latest_blogs.title }}"/>
+                </a>
+            </div>
+            <h3>
+                <a href="{{ generate_url('cms.articles.detail', {'id': most_latest_blogs.id}) }}" title="{{ most_latest_blogs.title }}">
+                    {{ most_latest_blogs.title|capitalize|raw  }}
+                </a>
+            </h3>
+            {{ most_latest_blogs.blog|striptags|truncate(150)|raw }}
+
+            <a href="{{ generate_url('cms.articles.detail', {'id': most_latest_blogs.id}) }}" title="{{ most_latest_blogs.title }} Read More">
+                Read More
+            </a>
+
+            <div class="clearfix"></div>
+
+            <div class="article-update-info">
+                <a>
+                    <i class="fa fa-user"></i> 
+                    <a href="{{ generate_url('social.members.detail', {'id': most_latest_blogs.created_by}) }}" title="{{ most_latest_blogs.author_name }}">
+                        {{ most_latest_blogs.author_name }}
+                    </a>
+                </a>
+                <i class="fa fa-clock-o"></i> {{ most_latest_blogs.date_created|date('d M Y H:i') }}
+
+                <a href="{{ generate_url('cms.articles.detail', {'id': most_latest_blogs.id}) }}#comments" title="{{ most_latest_blogs.title }} Comments">
+                    <i class="fa fa-comments"></i> Comments (0)
+                </a>
+            </div>             
+
+        {% else %}
+            No Most Latest Blogs
+        {% endif %}
+    </div>
+
+    <div class="col-sm-6 latest_blogs">
+        {% if latest_blogs|length > 0 %}
+            {% for latest_blog in latest_blogs %}
+                <div class="latest_blog">
+                    <a href="{{ generate_url('cms.articles.detail', {'id': latest_blog.id}) }}" title="{{ latest_blog.title }}">
+                        <img src="{{ resized_image(latest_blog.blog_image,90,90) }}" alt="{{ latest_blog.title }}" title="{{ latest_blog.title }}" align="left"/>
+                    </a>
+                    <h4>
+                        <a href="{{ generate_url('cms.articles.detail', {'id': latest_blog.id}) }}" title="{{ latest_blog.title }}">
+                            {{ latest_blog.title|capitalize  }}
+                        </a>
+                    </h4>
+
+                    {{ latest_blog.blog|striptags|truncate(80)|raw }}
+
+                    <a href="{{ generate_url('cms.articles.detail', {'id': latest_blog.id}) }}" title="{{ latest_blog.title }} Read More">
+                        Read More
+                    </a>
+
+                    <div class="clearfix"></div>
+
+                    <div class="article-update-info">
+                        <a>
+                            <i class="fa fa-user"></i> 
+                            <a href="{{ generate_url('social.members.detail', {'id': latest_blog.created_by}) }}" title="{{ latest_blog.author_name }}">
+                                {{ latest_blog.author_name }}
+                            </a>
+                        </a>
+
+                        <i class="fa fa-clock-o"></i> {{ latest_blog.date_created|date('d M Y H:i') }}
+
+                        <a href="{{ generate_url('cms.blogs.detail', {'id': latest_blog.id}) }}#comments" title="{{ latest_blog.title }}  Comments">
+                            <i class="fa fa-comments"></i> Comments (0)
+                        </a>
+                    </div>  
+                    <div class="clearfix"></div>  
+                </div>
+            {% endfor %}
+        {% else %}
+            No Latest Blogs
+        {% endif %}
+    </div>
+</div>

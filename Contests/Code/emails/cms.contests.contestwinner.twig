@@ -1,0 +1,29 @@
+{# empty Twig template #}
+"Dear {{ user.name }}
+<br>
+<br>
+Congratulations !!!
+<br>
+<br>
+The content that you submit for our contest has gain the most point.
+<br>
+<br>
+<b>Winning Content.</b>
+<br>
+<hr><b>{{ blog.title }}</b>
+<br>
+{{ blog.blog|striptags|truncate(150) }}
+<br>
+<hr>
+<br>
+Attached is a copy of the certificate
+<br>
+
+<br>
+Continue submiting you content for more contest awards.
+<br>
+
+<br>
+Thank you.
+<br>
+"

@@ -1,0 +1,266 @@
+<?php
+
+namespace Cms\Contests\Criteria\Code\Tables;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Criteria
+ *
+ * @ORM\Table(name="cms_contests_criteria", indexes={@ORM\Index(name="created_by_index", columns={"created_by"}), @ORM\Index(name="modified_by_index", columns={"modified_by"})})
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ */
+class Criteria extends \Kazist\Table\BaseTable {
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    protected $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alias", type="string", length=255, nullable=false)
+     */
+    protected $alias;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    protected $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="action_name", type="string", length=255, nullable=true)
+     */
+    protected $action_name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="min_points", type="integer", length=11, nullable=true)
+     */
+    protected $min_points;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="max_points", type="integer", length=11, nullable=true)
+     */
+    protected $max_points;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     */
+    protected $created_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     */
+    protected $date_created;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     */
+    protected $modified_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     */
+    protected $date_modified;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Criteria
+     */
+    public function setTitle($title) {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle() {
+        return $this->title;
+    }
+
+    /**
+     * Set alias
+     *
+     * @param string $alias
+     * @return Criteria
+     */
+    public function setAlias($alias) {
+        $this->alias = $alias;
+
+        return $this;
+    }
+
+    /**
+     * Get alias
+     *
+     * @return string 
+     */
+    public function getAlias() {
+        return $this->alias;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Criteria
+     */
+    public function setDescription($description) {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * Set action_name
+     *
+     * @param string $actionName
+     * @return Criteria
+     */
+    public function setActionName($actionName) {
+        $this->action_name = $actionName;
+
+        return $this;
+    }
+
+    /**
+     * Get action_name
+     *
+     * @return string 
+     */
+    public function getActionName() {
+        return $this->action_name;
+    }
+
+    /**
+     * Set min_points
+     *
+     * @param integer $minPoints
+     * @return Criteria
+     */
+    public function setMinPoints($minPoints) {
+        $this->min_points = $minPoints;
+
+        return $this;
+    }
+
+    /**
+     * Get min_points
+     *
+     * @return integer 
+     */
+    public function getMinPoints() {
+        return $this->min_points;
+    }
+
+    /**
+     * Set max_points
+     *
+     * @param integer $maxPoints
+     * @return Criteria
+     */
+    public function setMaxPoints($maxPoints) {
+        $this->max_points = $maxPoints;
+
+        return $this;
+    }
+
+    /**
+     * Get max_points
+     *
+     * @return integer 
+     */
+    public function getMaxPoints() {
+        return $this->max_points;
+    }
+
+    /**
+     * Get created_by
+     *
+     * @return integer 
+     */
+    public function getCreatedBy() {
+        return $this->created_by;
+    }
+
+    /**
+     * Get date_created
+     *
+     * @return \DateTime 
+     */
+    public function getDateCreated() {
+        return $this->date_created;
+    }
+
+    /**
+     * Get modified_by
+     *
+     * @return integer 
+     */
+    public function getModifiedBy() {
+        return $this->modified_by;
+    }
+
+    /**
+     * Get date_modified
+     *
+     * @return \DateTime 
+     */
+    public function getDateModified() {
+        return $this->date_modified;
+    }
+
+}

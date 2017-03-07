@@ -1,0 +1,13 @@
+{
+    "name": "blogs",
+    "title": "Blogs List",
+    "explanation": "Blogs List",
+    "description": "Blogs List",
+    "version": 61,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-06-21 17:59:56"
+}

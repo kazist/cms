@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Content slider List",
+            "description": "Management of Content slider.",
+            "controller": "Cms\\Addons\\Contentslider\\Controllers\\ContentsliderController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.addons.contentslider",
+            "route": "cms/addons/contentslider",
+            "arguments": "",
+            "keywords": "content, slider, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

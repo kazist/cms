@@ -1,0 +1,21 @@
+{
+    "autonewsletter": [{
+            "tracking_id": "1",
+            "unique_name": "cms.blogs.weekly.autonewsletter",
+            "subject": "Popular Blogs This Week",
+            "body": "<h1>Popular Blogs This Week</h1>\n\n{% set all_url = generate_url('cms.blog.blog') %}\n\n\n<p>&nbsp;</p>\n<div><!-- {% if( blogs|length > 0 ) %} --> \n<!-- {% for blog in blogs %} -->\n\n{% set blog_url = generate_url('cms.blog.blog.detail&id=' ~ blog.id) %}\n\n<div>\n\n<a href=\"{{ blog_url }}\">\n<img src=\"{{ uri.base.full}}{{blog.image_file}}\" align=\"left\" width=\"100px\" />\n</a>\n<a href=\"{{ blog_url }}\">\n <strong>{{ blog.title }}</strong> \n</a>\n<br /> \n{{ blog.profile|striptags|truncate(250) }}\n<div style=\"clear:both;\"></div>\n<hr /></div>\n<!-- {% endfor %} --> \n<!-- {% endif %} --> </div>\n\n<a href=\"{{ all_url }}\">View All</a>",
+            "frequency": "weekly",
+            "parameter_name": "blogs",
+            "table_name": "cms_blogs",
+            "limit": "10",
+            "email_limit": "10",
+            "category_field": "category_id",
+            "category_table": "cms_blogs_categories",
+            "category_table_mainfield": "title"
+        }],
+    "harvester": [{
+            "tracking_id": "1",
+            "title": "Blogs Writers",
+            "user_field": "created_by"
+        }]
+}

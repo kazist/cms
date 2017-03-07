@@ -1,0 +1,59 @@
+{# empty Twig template #}
+
+<!-- {% set all_url = generate_url('cms.articles', null, 0) %} --> 
+
+
+<div>
+
+    <!--  {% set article_url = generate_url('cms.articles.detail', {'id': items.0.id}, 0) %} --> 
+
+    <div>
+
+        <h4>
+            <a href= "{{ article_url }} ">
+                {{ items.0.title }}
+            </a>
+        </h4> 
+
+        <div class="col-sm-6">
+            <a href= "{{ article_url }} ">
+                <img src= "{{ web_root }}{{items.0.image_file}} " align= "left" style="width: 100%" />
+            </a>
+        </div>
+
+
+        <div class="col-sm-6">
+
+            {{ items.0.article|striptags|raw|truncate(250) }}
+        </div>
+
+        <div style= "clear:both; "></div>
+        <hr />
+    </div>
+</div>
+<div>
+    <!-- {% if( items|length > 0 ) %} --> 
+    <!-- {% for key,article in items %} -->
+
+    <!--  {% set article_url = generate_url('cms.articles.detail', {'id': article.id}, 0) %} --> 
+    <!-- {% if( key ) %} --> 
+    <div>
+        <a href= "{{ article_url }} ">
+            <img src= "{{ web_root }}{{article.image_file}} " align= "left" width= "200px " />
+        </a>
+        <a href= "{{ article_url }} ">
+            <strong>{{ article.title }}</strong> 
+        </a>
+        <br /> 
+        {{ article.article|striptags|raw|truncate(250) }}
+        <div style= "clear:both; "></div>
+        <hr />
+    </div>
+    <!-- {% endif %} -->
+    <!-- {% endfor %} --> 
+    <!-- {% endif %} -->
+</div>
+
+<div class="text-center text-capitalize">
+    <a class="btn btn-success" href= "{{ all_url }} ">View All Latest Articles</a>
+</div>

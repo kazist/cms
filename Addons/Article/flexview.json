@@ -1,0 +1,80 @@
+[
+    {
+        "title": "Articles List",
+        "show_title": "1",
+        "unique_name": "cms.addons.article",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "params": {
+            "category_id": 2
+        },
+        "setting": [{
+                "name": "category_id",
+                "label": "Articles Category",
+                "type": "select",
+                "source": {
+                    "custom": [{
+                            "value": "1",
+                            "text": "Default Category"
+                        }],
+                    "table": {
+                        "name": "#__cms_articles_categories",
+                        "where": ["published=1"],
+                        "order": ["title ASC"],
+                        "value": "id",
+                        "text": "title"
+                    }
+                }
+            }, {
+                "name": "limit",
+                "label": "Limit",
+                "type": "text"
+            }, {
+                "name": "filter_type",
+                "label": "Filter Type",
+                "type": "select",
+                "source": {
+                    "custom": [{
+                            "value": "popular",
+                            "text": "popular"
+                        }, {
+                            "value": "featured",
+                            "text": "featured"
+                        }, {
+                            "value": "related",
+                            "text": "related"
+                        }, {
+                            "value": "latest",
+                            "text": "latest"
+                        }]
+                }
+            }, {
+                "name": "template",
+                "label": "Template",
+                "type": "select",
+                "source": {
+                    "custom": [{
+                            "value": "listing",
+                            "text": "listing"
+                        }, {
+                            "value": "tabular",
+                            "text": "tabular"
+                        }]
+                }
+            }, {
+                "name": "additional_info",
+                "label": "Additional Info",
+                "type": "yesno"
+            }],
+        "positions": ["sidebar"]
+
+    }
+]

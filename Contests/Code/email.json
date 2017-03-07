@@ -1,0 +1,15 @@
+{
+    "layout": [{
+            "tracking_id": "1",
+            "unique_name": "cms.contests.contestwinner",
+            "subject": "Congratulations Your Content has won  !!!",
+            "sms": "Dear {{ user.name }}, Congratulations Your Content has won  !!!",
+            "body": "Dear {{ user.name }}<br><br>Congratulations !!!<br><br>The content that you submit for our contest has gain the most point.<br><br><br><b>Winning Content.<\/b><br><hr><b>{{ blog.title }}<\/b><br>{{ blog.blog|striptags|truncate(150) }}<br><hr><br>Attached is a copy of the certificate<br><br>Continue submiting you content for more contest awards.<br><br>Thank you.<br>"
+        }, {
+            "tracking_id": "2",
+            "unique_name": "cms.contests.contestlosser",
+            "subject": "Sorry Your Content has Lost  !!!",
+            "sms": "Dear {{ user.name }}, Sorry Your Content has Lost  !!!",
+            "body": "Dear {{ user.name }}<br><br>Sorry !!!<br><br>The content that you submit for our contest has lost the contest.<br><br><br><b>Content.<\/b><br><hr><b>{{ blog.title }}<\/b><br>{{ blog.blog|striptags|truncate(150) }}<br><hr><br>Continue submiting you content for more contest awards.<br><br>If you need any help, please let us know so that we can assist you.<br><br>Thank you.<br>"
+        }]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "blogslider",
+    "title": "Blogslider Listing",
+    "explanation": "Blogslider Listing",
+    "description": "Blogslider Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/blogslider\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/blogslider\/"
+}

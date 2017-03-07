@@ -1,0 +1,13 @@
+{
+    "name": "columnists",
+    "title": "Blogs Columnists",
+    "explanation": "Blogs Columnists",
+    "description": "Blogs Columnists",
+    "version": 22,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-11-28 09:05:26"
+}

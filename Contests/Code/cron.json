@@ -1,0 +1,43 @@
+
+[{
+        "tracking_id": "1",
+        "controller": "Cms\\Contests\\Code\\Controllers\\ContestsController",
+        "function": "assignpointscronAction",
+        "unique_name": "cms.contests.assignpointscron",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 0
+    }, {
+        "tracking_id": "2",
+        "controller": "Cms\\Contests\\Code\\Controllers\\ContestsController",
+        "function": "accumulatepointscronAction",
+        "unique_name": "cms.contests.accumulatepointscron",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 0
+    }, {
+        "tracking_id": "3",
+        "controller": "Cms\\Contests\\Code\\Controllers\\ContestsController",
+        "function": "winnerpointsAction",
+        "unique_name": "cms.contests.winnerpoints",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 0
+    }]
+
+

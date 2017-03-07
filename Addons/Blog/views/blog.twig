@@ -1,0 +1,46 @@
+
+{{ set_assets('applications/Cms/Addons/Blog/assets/css/style.css') }}
+
+<div class="block-blogs">
+    {% if blogs|length > 0 %}
+        {% for blog in blogs %}
+            <div class="blog">
+                <a href="{{ generate_url('cms.blogs.detail', null, 0, blog) }}" title='{{ blog.title }}'>
+                    <img src="{{ resized_image(blog.blog_image,48,48) }}" alt="{{ blog.title }}" title="{{ blog.title }}" align="left" width="48px"/>
+                </a>
+                <h4>
+                    <a href="{{ generate_url('cms.blogs.detail', null, 0, blog) }}" title='{{ blog.title }}'>
+                        {{ blog.title|capitalize|raw  }}
+                    </a>
+                </h4>
+                {{ blog.blog|striptags|truncate(70)|raw }}
+                <div class="clearfix"></div>
+                <a href="{{ generate_url('cms.blogs.detail', null, 0, blog) }}" title='{{ blog.title }} Read More'>
+                    Read More
+                </a>
+
+                <div class="article-update-info">
+                    <div class="text-capitalize">
+                        <a>
+                            <i class="fa fa-user"></i> 
+                            <a href="{{ generate_url('users.users.detail', {'id': blog.created_by}) }}" title='{{ blog.author_name }}'>
+                                {{ blog.author_name }}
+                            </a>
+                        </a>
+                    </div>
+                    <div class="text-capitalize">
+                        <i class="fa fa-clock-o"></i> {{ blog.date_created|date('d M Y H:i') }}
+                    </div>
+                    <div class="text-capitalize pull-right">
+                        <a href="{{ generate_url('cms.blogs.detail', null, 0, blog) }}#comments" title='{{ blog.title }} Comments'>
+                            <i class="fa fa-comments"></i> Comments (0)
+                        </a>
+                    </div>
+                </div>  
+                <div class="clearfix"></div>  
+            </div>
+        {% endfor %}
+    {% else %}
+        No Latest Blogs
+    {% endif %}
+</div>

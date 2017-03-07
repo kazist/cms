@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Slider List",
+            "description": "Management of Slider.",
+            "controller": "Cms\\Addons\\Slider\\Controllers\\SliderController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.addons.slider",
+            "route": "cms/addons/slider",
+            "arguments": "",
+            "keywords": "slider, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

@@ -1,0 +1,81 @@
+Cms\Contests\Winners\Code\Tables\Winners:
+  table: cms_contests_winners
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    blog_id:
+      name: blog_id
+      type: integer
+      length: 11
+      nullable: false
+    category_id:
+      name: category_id
+      type: integer
+      length: 11
+      nullable: false
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    contest_id:
+      name: contest_id
+      type: integer
+      length: 11
+      nullable: false
+    contest_season:
+      name: contest_season
+      type: integer
+      length: 11
+      nullable: false
+    properties:
+      name: properties
+      type: text
+      nullable: true
+    total_points:
+      name: total_points
+      type: integer
+      length: 11
+      nullable: true
+    total_values:
+      name: total_values
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    blog_id_index:
+      columns: [blog_id]
+    category_id_index:
+      columns: [category_id]
+    user_id_index:
+      columns: [user_id]
+    contest_id_index:
+      columns: [contest_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

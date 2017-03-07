@@ -1,0 +1,10 @@
+{
+    "name": "articlecategory",
+    "title": "Articlecategory Listing",
+    "explanation": "Articlecategory Listing",
+    "description": "Articlecategory Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/articlecategory\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/articlecategory\/"
+}

@@ -1,0 +1,48 @@
+{# empty Twig template #}
+
+{{ set_assets('applications/Games/assets/css/game.css') }}
+
+<div class="survey-list">
+    <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>No of Day</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if items|length > 0 %}
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>
+                                {% if item.start_date != '0000-00-00 00:00:00' %}
+                                    {{ item.start_date ? item.start_date|date('d M Y') }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if item.end_date != '0000-00-00 00:00:00' %}
+                                    {{ item.end_date ? item.end_date|date('d M Y') }}
+                                {% endif %}
+                            </td>
+                            <td>{{ item.no_of_days }}</td>
+                            <td>
+                                <a class="btn btn-success btn-flat btn-xs" href="{{ generate_url('cms.contests.detail', {'id': item.id}) }}" title='View Contest'>
+                                    View Contest
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+{% include "items.pagination.twig"%}

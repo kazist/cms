@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 4, 2015, 5:18:38 PM
+    Author     : sbc
+*/
+
+.cms-article-rate{
+    background: #DDD;
+    width: auto;
+}
+
+.cms-article-rate .cms-article-rate-title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cms-article-rate .cms-article-rate-item{
+    background: white;
+    text-align: center;
+    border:2px solid #ccc;
+}
+
+.cms-article-rate .cms-article-rate-item .percent{
+    text-align: center;
+    font-size:20px;
+}
+
+.cms-article-rate .cms-article-rate-item:hover{
+    border:2px solid #f15d22;
+    cursor: pointer;
+    background: #ffd6d6;
+}
+
+.cms-article-survey{
+    border:2px dotted #DDD;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.cms-article-survey .cms-article-question{
+    border-bottom:1px dotted #ddd;
+    padding:5px;
+    margin-bottom:5px;
+}

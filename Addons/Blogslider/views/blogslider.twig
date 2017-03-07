@@ -1,0 +1,12 @@
+ 
+{{ set_assets('applications/Cms/Addons/Blogslider/assets/css/style.css') }}
+
+<div class="blogslider-wrapper">
+    <div class="col-sm-8 blogslider-slider">
+        {% include 'blogslider.slider.twig' ignore missing with { blogs:blogs } %}
+    </div>
+    <div class="col-sm-4 blogslider-static">
+        {% include 'blogslider.content.twig' ignore missing with { blogs:blogs } %}
+    </div>
+</div>
+<div class="clearfix"></div>

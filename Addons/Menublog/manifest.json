@@ -1,0 +1,10 @@
+{
+    "name": "menublog",
+    "title": "Menu blog Listing",
+    "explanation": "Menu blog Listing",
+    "description": "Menu blog Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/menublog\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/menublog\/"
+}

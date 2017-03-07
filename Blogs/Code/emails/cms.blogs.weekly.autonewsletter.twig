@@ -1,0 +1,30 @@
+{# empty Twig template #}
+<h1>Popular Blogs This Week</h1>
+
+<!--{% set all_url = generate_url('cms.blogs') %}--> 
+
+
+<p>&nbsp;</p>
+<div>
+    <!-- {% if( blogs|length > 0 ) %} --> 
+    <!-- {% for blog in blogs %} -->
+
+    <!-- {% set blog_url = generate_url('cms.blogs.detail', {'id': blog.id}, 0) %}--> 
+
+    <div>
+
+        <a href="{{ blog_url }}">
+            <img src="{{ web_root }}{{blog.image_file}}" align="left" width="100px" />
+        </a>
+        <a href="{{ blog_url }}s">
+            <strong>{{ blog.title }}</strong> 
+        </a>
+        <br /> 
+        {{ blog.profile|striptags|truncate(250) }}
+        <div style="clear:both;"></div>
+        <hr /></div>
+    <!-- {% endfor %} --> 
+    <!-- {% endif %} --> 
+</div>
+
+<a href="{{ all_url }}">View All</a>"

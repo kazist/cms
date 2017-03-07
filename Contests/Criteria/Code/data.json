@@ -1,0 +1,38 @@
+[{
+        "tracking_id": "1",
+        "title": "FaceBook Share",
+        "alias": "facebook_share",
+        "min_points": "1",
+        "max_points": "20",
+        "description": "FaceBook Share"
+    }, {
+        "tracking_id": "2",
+        "title": "Twitter Share",
+        "alias": "twitter_share",
+        "min_points": "1",
+        "max_points": "20",
+        "description": "Twitter Share"
+    },
+    {
+        "tracking_id": "3",
+        "title": "FaceBook Like",
+        "alias": "facebook_like",
+        "min_points": "1",
+        "max_points": "20",
+        "description": "FaceBook Like"
+    }, {
+        "tracking_id": "4",
+        "title": "Disqus Comments",
+        "alias": "disqus_comments",
+        "min_points": "1",
+        "max_points": "20",
+        "description": "Disqus Comments"
+    }, {
+        "tracking_id": "5",
+        "title": "Page Views",
+        "alias": "page_views",
+        "min_points": "1",
+        "max_points": "20",
+        "description": "Page Views"
+    }]
+

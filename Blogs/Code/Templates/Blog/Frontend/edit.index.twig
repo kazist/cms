@@ -1,0 +1,86 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Cms/Components/assets/css/article.css') }}
+{{ set_assets('applications/Cms/Components/assets/js/article.js') }}
+
+<h1 class="component-header">Add/Edit Blog</h1>
+
+<form id="main-edit-form" action="{{ friendly_url('app=cms&com=blog&subset=blog&task=save&controller=BlogController') }}" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+    <div class="add-edit-blog">
+        <div class="well well-sm">Blog Detail </div>
+
+        <div class="article-detail-form">
+            <div> 
+                <div class="col-sm-6">
+                    {{ forms.input('title', 'text', item.title, 'Title') }}
+                    {{ forms.input('category_id', 'select', item.category_id, 'Category', null, null, null, null, category_options) }}
+
+                </div>
+                <div class="col-sm-6">
+                    {{ forms.input('image', 'file', item.image) }}
+                    <img src="{{ resized_image(item.blog_image.file, 48,48) }}" alt="{{ item.blog_image.file }}" title="{{ item.blog_image.file }}" width='48px'>
+                </div>
+            </div>
+
+            <div class="clr"></div>
+            <div class="blog-contest">
+                {% if not item.contest_id %}
+                    {% include 'cms.form.contest.twig' ignore missing with {'item':item} %}
+                {% else %}
+                    <div class="form-horizontal cms-contest">
+                        <div class="cms-contest-list">
+                            <b>Selected Contest :</b> {{ item.contest_id_join }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="clr"></div>
+            <div>
+                {{ forms.input('blog', 'editor', item.blog, 'Blog Content') }}
+                {{ forms.input('short_description', 'textarea', item.short_description, 'Short Description') }}
+            </div>
+
+            {{ forms.input('survey_id', 'hidden', item.survey_id) }}
+        </div>
+
+        <div class="videos-form-tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active publishing_date_tab"><a href="#publishing_date" aria-controls="publishing_date" role="tab" data-toggle="tab" title='Publishing detail'>Publishing detail</a></li>
+                <li role="presentation" class="opinion_tab"><a href="#opinion" aria-controls="opinion" role="tab" data-toggle="tab" title='Reader Opinion'>Reader Opinion</a></li>
+                <li role="presentation" class="survey_tab"><a href="#survey" aria-controls="survey" role="tab" data-toggle="tab" title='Survey'>Survey</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div role="tabpanel" class="tab-pane active" id="publishing_date">
+                    {% include "cms.form.publishing.twig" ignore missing %}  
+                </div>
+
+                <div role="tabpanel" class="tab-pane " id="opinion">
+                    {% include "cms.form.opinion.twig" ignore missing %}  
+                </div>
+
+                <div role="tabpanel" class="tab-pane " id="survey">
+                    {% include "cms.form.survey.twig" ignore missing %}  
+                </div>
+
+            </div>
+        </div>
+
+        {{ forms.input('id', 'hidden', item.id) }}
+
+        <a class="btn btn-danger btn-sm" href="{{ friendly_url('app=cms&com=blog&subset=blog') }}">Cancel</a>
+        <input class="btn btn-success btn-sm" name="id" type="submit" value="Save">
+
+        <br>
+        <br>
+    </div>
+        
+    {{ forms.input('_token' ) }}
+
+</form>

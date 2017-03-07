@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Slider",
+        "show_title": "1",
+        "unique_name": "cms.addons.slider",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "params": {
+            "category_id": 2
+        },
+        "setting": [{
+                "name": "category_id",
+                "label": "Slider Category",
+                "type": "select",
+                "source": {
+                    "custom": [{
+                            "value": "1",
+                            "text": "Default Category"
+                        }],
+                    "table": {
+                        "name": "#__cms_sliders_categories",
+                        "order": ["title ASC"],
+                        "value": "id",
+                        "text": "title"
+                    }
+                }
+            }, {
+                "name": "width",
+                "label": "Slider Width",
+                "type": "text"
+            }, {
+                "name": "height",
+                "label": "Slider Height",
+                "type": "text"
+            }, {
+                "name": "show_indicator",
+                "label": "Show Indicator",
+                "type": "yesno"
+            }, {
+                "name": "show_caption",
+                "label": "Show Caption",
+                "type": "yesno"
+            }],
+        "positions": ["sidebar"]
+
+    }
+]

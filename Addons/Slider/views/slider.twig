@@ -1,0 +1,9 @@
+
+{{ set_assets('applications/Cms/Addons/Slider/assets/css/style.css') }}
+
+{% if layout == 'fractionslider'%}
+    {% include "fractionslider.twig" ignore missing with {'sliders': sliders} %}
+{% else %}
+    {% include "bootstrapslider.twig" ignore missing with {'sliders': sliders} %}
+{% endif %}
+

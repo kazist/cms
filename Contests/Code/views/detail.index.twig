@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Cms/assets/js/contest.js') }}
+{{ set_assets('applications/Cms/assets/css/article.css') }}
+
+{% set path_set = addTwigPath( "applications.Cms.generalviews") %}
+{% set item_url =  generate_url('cms.articles.detail', {'id':item.id}) %}
+
+<div class="cms-content">
+
+    <h1 class="component-header">{{ item.title }} </h1>
+
+    <div> 
+        <div class="clearfix"></div>
+        <h3>Contest Blog</h3>
+        <hr>
+        <div class="contest-blogs-list">
+            {% include "contest.blogs.twig" ignore missing with {'contest_id': item.id, 'offset':0 }  %}
+        </div>
+        <div class="clearfix"></div>
+        <br>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+
+
+

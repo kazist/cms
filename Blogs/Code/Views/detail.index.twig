@@ -1,0 +1,68 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Cms/assets/css/article.css') }}
+
+
+{% set item_url = generate_url('cms.articles.detail', {'id':item.id})  %}
+<div class="cms-content">
+
+    <h1 class="component-header">{{ item.title }} </h1>
+
+    {% if item.contest.id %}
+        <div class="well well-sm">
+
+            This Blog is in <b>"{{ item.contest.title}}"</b> Contest.<br>
+
+            <b>Summary Tally:</b>
+
+            {% if item.tallies|length>0 %}
+                {% for tally in item.tallies %}
+                    <i>{{ tally.title }}</i>:{{ tally.value|round() }},  &nbsp;
+                {% endfor %}
+            {% endif %}<br>
+
+            {% if item.contest_start_date != '0000-00-00 00:00:00' and item.contest_start_date is not null %}
+                <b>Starting:</b>
+                {{  item.contest_start_date|date('d M Y') }}
+            {% endif %}
+
+            {% if item.contest_end_date != '0000-00-00 00:00:00' and item.contest_end_date is not null %}
+                <b> - Ending:</b>
+                {{ item.contest_end_date|date('d M Y') }}
+            {% endif %}
+
+        </div>
+    {% endif %}
+
+    {% if item.image %}
+        <div class="img-wrapper">
+            <img src="{{ resized_image(item.blog_image.file, 700,300) }}" alt="{{ item.title }}" title="{{ item.title }}">
+        </div>
+    {% endif %}
+
+    {{ item.blog|raw }}
+
+    {% if addthis_enable %}
+        {{ include('cms.addthis.twig') }} 
+    {% endif %}
+
+    {% if rate_enable %}
+        {{ include('user.rate.twig') }} 
+    {% endif %}
+
+    {% if survey_enable %}
+        {{ include('cms.survey.twig') }} 
+    {% endif %}
+
+    {% if disqus_enable %}
+        {{ include('cms.disqus.twig') }} 
+    {% endif %}
+
+    {{ forms.input('id', 'hidden', item.id) }}
+
+    <div class="clearfix"></div>
+</div>
+
+
+

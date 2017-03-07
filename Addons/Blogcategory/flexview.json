@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Blog Catagories List",
+        "show_title": "1",
+        "unique_name": "cms.addons.blogcategory",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "positions": ["sidebar"]
+
+    }
+]

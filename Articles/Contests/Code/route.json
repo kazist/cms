@@ -1,0 +1,125 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Jobs\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::taskAction",
+            "unique_name": "admin.cms.articles.contests.task",
+            "route": "admin/cms/articles/contests/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "contests, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Contest List",
+            "description": "Management of Contests.",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.articles.contests",
+            "route": "admin/cms/articles/contests",
+            "arguments": "",
+            "keywords": "contest, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Contest ",
+            "description": "Add Contest .",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::addAction",
+            "unique_name": "admin.cms.articles.contests.add",
+            "route": "admin/cms/articles/contests/add",
+            "permissions": "can_add",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "contest, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Contest {{ item.name }}",
+            "description": "Edit Contest {{ item.name }}.",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::editAction",
+            "unique_name": "admin.cms.articles.contests.edit",
+            "route": "admin/cms/articles/contests/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "contest, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Contest Detail: {{ item.name }}",
+            "description": "Contest Detail: {{ item.name }}",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::detailAction",
+            "unique_name": "admin.cms.articles.contests.detail",
+            "route": "admin/cms/articles/contests/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "contest, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Contest Delete: {{ item.name }}",
+            "description": "Contest Delete: {{ item.name }}",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::deleteAction",
+            "unique_name": "admin.cms.articles.contests.delete",
+            "route": "admin/cms/articles/contests/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "contest, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Contest Save: {{ item.name }}",
+            "description": "Contest Save: {{ item.name }}",
+            "controller": "Cms\\Articles\\Contests\\Code\\Controllers\\Admin\\ContestsController::saveAction",
+            "unique_name": "admin.cms.articles.contests.save",
+            "route": "admin/cms/articles/contests/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "contest, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

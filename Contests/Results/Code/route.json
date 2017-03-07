@@ -1,0 +1,163 @@
+{
+    "frontend": [{
+            "title": "Result List",
+            "description": "Management of Results.",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\ResultsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.contests.results",
+            "route": "cms/contests/results",
+            "arguments": "",
+            "keywords": "result, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Result Detail: {{ item.name }}",
+            "description": "Result Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\ResultsController::detailAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.contests.results.detail",
+            "route": "cms/contests/results/{id}",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::taskAction",
+            "unique_name": "admin.cms.contests.results.task",
+            "route": "admin/cms/contests/results/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "results, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Result List",
+            "description": "Management of Results.",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.contests.results",
+            "route": "admin/cms/contests/results",
+            "arguments": "",
+            "keywords": "result, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Result ",
+            "description": "Add Result .",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::addAction",
+            "unique_name": "admin.cms.contests.results.add",
+            "route": "admin/cms/contests/results/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "result,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Result {{ item.name }}",
+            "description": "Edit Result {{ item.name }}.",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::editAction",
+            "unique_name": "admin.cms.contests.results.edit",
+            "route": "admin/cms/contests/results/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Result Detail: {{ item.name }}",
+            "description": "Result Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::detailAction",
+            "unique_name": "admin.cms.contests.results.detail",
+            "route": "admin/cms/contests/results/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Result Delete: {{ item.name }}",
+            "description": "Result Delete: {{ item.name }}",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::deleteAction",
+            "unique_name": "admin.cms.contests.results.delete",
+            "route": "admin/cms/contests/results/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Result Save: {{ item.name }}",
+            "description": "Result Save: {{ item.name }}",
+            "controller": "Cms\\Contests\\Results\\Code\\Controllers\\Admin\\ResultsController::saveAction",
+            "unique_name": "admin.cms.contests.results.save",
+            "route": "admin/cms/contests/results/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "result, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

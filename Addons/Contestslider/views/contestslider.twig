@@ -1,0 +1,105 @@
+{{ set_assets('applications/Cms/Addons/Contestslider/assets/css/style.css') }}
+{{ set_assets('applications/Cms/Addons/Contestslider/assets/js/ayaSlider-minified.js') }}
+{{ set_assets('applications/Cms/Addons/Contestslider/assets/js/contestslider.js') }}
+
+<div id="contest-slideShow">
+    <div id="slideShow">
+
+        {% if contests|length > 0 %}
+            <!-- SLIDE 2 -->
+            {% for contest in contests %}
+
+                {% set submit_blog_url = generate_url('cms.blogs.edit', {'contest_id':contest.id}) %}
+                {% set contest_blog_url = generate_url('cms.contests.detail', {'id':contest.id}) %}
+
+                <div data-out="delay:5000;opacity:0">
+                    <div class="slider-img-wrapper">
+                        <img src="{{ resized_image(contest.contest_image) }}" alt="{{ contest.title }}" title="{{ contest.title }}" />
+                    </div>
+
+                    <div class="push_7 grid_5 _ayaSlider_move col-md-6 pull-left">
+                        <div data-in="top:40;delay:1050;duration:550" class="title _ayaSlider_move" >
+                            <h1 class="_ayaSlider_move">
+                                {{ contest.title }}
+                            </h1>
+                        </div>
+                        <div data-in="top:200;left:-1000;delay:700;duration:1550" class="contest-submit content _ayaSlider_move">
+                            <a href="{{ submit_blog_url  }}" class="btn btn-danger" title="Submit Your Blog to a Contest">
+                                Submit Your Blog to a Contest
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="push_7 grid_5 _ayaSlider_move col-md-6 pull-right contest-blogs">
+                        <div data-in="top:-100;delay:1050;duration:550" class="title _ayaSlider_move" >
+                            <h2 class="_ayaSlider_move contest-blogs-title bg-orange">
+                                Blog in Contest
+                                <small class="pull-right">
+                                    <a href="{{ contest_blog_url  }}" title=" View all Blogs In {{ contest.title }} Contest">
+                                        View all Blogs({{ contest.total_blogs }})
+                                    </a>
+                                </small>
+                            </h2>
+                        </div>
+                        {% if contest.blogs|length > 0 %}
+                            <!-- SLIDE 2 -->
+                            {% for key,blog in contest.blogs %}
+
+                                {% set submit_blog_url = generate_url('cms.blogs.detail', {'id':blog.id}) %}
+
+                                <div data-in="left:-1000;delay:{{ (key+1)*100 }};duration:1550" class="content _ayaSlider_move">
+                                    <a href='{{ submit_content_url }}'>
+                                        <img src="{{ resized_image(blog.blog_image,48,48) }}" align="left" width="48px"/>
+                                    </a>
+                                    <a href='{{ submit_content_url }}' title="{{ blog.title }} ">
+                                        {{ blog.title }} 
+                                    </a>
+                                    <br>
+                                    <div class="business-posted-date">
+                                        <i class="fa fa-clock-o"></i> Posted:  {{ blog.date_created|date('d M Y H:i:s') }} &nbsp;&nbsp;
+                                        <i class="fa fa-user"></i> Posted By: {{ blog.author_name }} 
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+                        <div data-in="left:-1000;delay:{{ (key+1)*100 }};duration:1550" class="contest-submit content _ayaSlider_move">
+                            {% if contest.blogs|length == 0 %}
+                                No Blog Submited to this contest.
+                                <br>
+                            {% endif %}
+                            <a href="{{ submit_blog_url  }}" class="btn btn-danger" title="Submit Your Blog to a Contest">
+                                Submit Your Blog to a Contest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+    <div class="slider-navigation">
+        <a class="pull-left prev">
+            <i class="fa fa-arrow-circle-left fa-3x"></i>
+        </a>
+
+        <a class="pull-right next">
+            <i class="fa fa-arrow-circle-right fa-3x"></i>
+        </a>
+    </div>
+
+    <ul class="slideControl">
+        {% if contests|length > 0 %}
+            <!-- SLIDE 2 -->
+            {% for contest in contests %}
+                <li>
+
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>

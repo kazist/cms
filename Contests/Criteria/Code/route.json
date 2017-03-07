@@ -1,0 +1,123 @@
+{
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::taskAction",
+            "unique_name": "admin.cms.contests.criteria.task",
+            "route": "admin/cms/contests/criteria/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "candidate, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Criteria List",
+            "description": "Management of Criteria.",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.contests.criteria",
+            "route": "admin/cms/contests/criteria",
+            "arguments": "",
+            "keywords": "criteria, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Criteria  ",
+            "description": "Add Criteria .",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::addAction",
+            "unique_name": "admin.cms.contests.criteria.add",
+            "route": "admin/cms/contests/criteria/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "criteria, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Criteria {{ item.name }}",
+            "description": "Edit Criteria {{ item.name }}.",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::editAction",
+            "unique_name": "admin.cms.contests.criteria.edit",
+            "route": "admin/cms/contests/criteria/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "criteria, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Criteria Detail: {{ item.name }}",
+            "description": "Criteria Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::detailAction",
+            "unique_name": "admin.cms.contests.criteria.detail",
+            "route": "admin/cms/contests/criteria/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "criteria, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Criteria Delete: {{ item.name }}",
+            "description": "Criteria Delete: {{ item.name }}",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::deleteAction",
+            "unique_name": "admin.cms.contests.criteria.delete",
+            "route": "admin/cms/contests/criteria/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "criteria, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Criteria Save: {{ item.name }}",
+            "description": "Criteria Save: {{ item.name }}",
+            "controller": "Cms\\Contests\\Criteria\\Code\\Controllers\\Admin\\CriteriaController::saveAction",
+            "unique_name": "admin.cms.contests.criteria.save",
+            "route": "admin/cms/contests/criteria/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "criteria, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

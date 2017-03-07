@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 4, 2015, 5:18:38 PM
+    Author     : sbc
+*/
+
+.cms-articles{
+
+}
+
+.article-update-info{
+
+    margin:5px 0;
+}
+
+.article-update-info div{
+    text-transform: uppercase;
+    margin-left:10px;
+    width:auto;
+    float: left;
+}
+
+.article-update-info div a{
+    text-transform: uppercase;
+}
+
+.cms-article-title{
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.cms-article-title a{
+    color:#333;
+}
+
+.cms-article-title a:hover{
+    color:#f15d22;
+}
+
+.cms-row-article{  
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+} 
+
+.cms-article-img-wrapper{
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    margin-bottom: 10px;
+
+}
+
+.cms-article-img-wrapper img{
+    height: 200px;
+}
+
+.add-edit-blog .blog-publish-connector{
+    width:50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.add-edit-blog .blog-publish-up, .add-edit-blog .blog-publish-down{
+    width:200px;
+    display: inline-block;
+}
+
+.cms-contest{
+    border:3px solid #ddd;
+    background: #F5F5F5;
+}
+.cms-contest .cms-contest-list{
+    margin: 5px;
+}
+
+.cms-content .img-wrapper{
+    height: 300px;
+    border:1px solid #F5F5F5;
+    overflow: hidden;
+    text-align: center;
+    background: #F5F5F5;
+}
+
+.cms-content .img-wrapper img{
+    width: auto;
+}
+
+
+
+
+

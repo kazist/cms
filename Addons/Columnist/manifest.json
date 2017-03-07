@@ -1,0 +1,10 @@
+{
+    "name": "columnist",
+    "title": "Columnist Listing",
+    "explanation": "Columnist Listing",
+    "description": "Columnist Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/columnist\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/columnist\/"
+}

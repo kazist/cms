@@ -1,0 +1,242 @@
+{
+    "frontend": [{
+            "title": "Blog List",
+            "description": "Management of Blogs.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.blogs",
+            "route": "cms/blogs",
+            "seo_url": "blogs",
+            "arguments": "",
+            "keywords": "blog, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "Add Blog",
+            "description": "Add Blog.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::addAction",
+            "unique_name": "cms.blogs.add",
+            "route": "cms/blogs/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "blog, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"]
+            }
+        }, {
+            "title": "Edit Blog {{ item.name }}",
+            "description": "Edit Blog {{ item.name }}.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::editAction",
+            "unique_name": "cms.blogs.edit",
+            "route": "cms/blogs/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write", "can_writeown"],
+                "ADMIN": ["can_write", "can_writeown"],
+                "MODERATOR": ["can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Blog Detail: {{ item.name }}",
+            "description": "Blog Detail: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::detailAction",
+            "unique_name": "cms.blogs.detail",
+            "route": "cms/blogs/detail/{id}",
+            "seo_url": "blogs/{slug}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+             "seo_arguments": {
+                "slug": null
+            },
+            "keywords": "blog, list, {{ item.title }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "Blog Delete: {{ item.name }}",
+            "description": "Blog Delete: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::deleteAction",
+            "unique_name": "cms.blogs.delete",
+            "route": "cms/blogs/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Blog Save: {{ item.name }}",
+            "description": "Blog Save: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\BlogsController::saveAction",
+            "unique_name": "cms.blogs.save",
+            "route": "cms/blogs/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::taskAction",
+            "unique_name": "admin.cms.blogs.task",
+            "route": "admin/cms/blogs/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "blogs, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Blog List",
+            "description": "Management of Blogs.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.blogs",
+            "route": "admin/cms/blogs",
+            "arguments": "",
+            "keywords": "blog, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Blog",
+            "description": "Add Blog.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::addAction",
+            "unique_name": "admin.cms.blogs.add",
+            "route": "admin/cms/blogs/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "blog, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Blog {{ item.name }}",
+            "description": "Edit Blog {{ item.name }}.",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::editAction",
+            "unique_name": "admin.cms.blogs.edit",
+            "route": "admin/cms/blogs/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write", "can_writeown"],
+                "ADMIN": ["can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Blog Detail: {{ item.name }}",
+            "description": "Blog Detail: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::detailAction",
+            "unique_name": "admin.cms.blogs.detail",
+            "route": "admin/cms/blogs/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Blog Delete: {{ item.name }}",
+            "description": "Blog Delete: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::deleteAction",
+            "unique_name": "admin.cms.blogs.delete",
+            "route": "admin/cms/blogs/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Blog Save: {{ item.name }}",
+            "description": "Blog Save: {{ item.name }}",
+            "controller": "Cms\\Blogs\\Code\\Controllers\\Admin\\BlogsController::saveAction",
+            "unique_name": "admin.cms.blogs.save",
+            "route": "admin/cms/blogs/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "blog, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

@@ -1,0 +1,125 @@
+{{ set_assets('applications/Cms/Addons/Contentslider/assets/css/style.css') }}
+
+{{ set_assets('applications/Cms/Addons/Contentslider/assets/js/ayaSlider-minified.js') }}
+
+<div id="content-slideShow">
+    <div id="slideShow">
+
+        {% if categories|length > 0 %}
+            <!-- SLIDE 2 -->
+            {% for category in categories %}
+
+                {% set submit_content_url = generate_url('cms.'~content_source~'.'~content_source~'.edit', {'content_id':content.id}) %}
+                {% set content_content_url = generate_url('cms.'~content_source~'.'~content_source~'.detail', {'id':content.id}) %}
+
+                <div data-out="delay:5000;opacity:0">
+                    <div class="slider-img-wrapper">
+                        <img src="{{ resized_image(category.content_image) }}" alt="{{ category.title }}" title="{{ category.title }}" />
+                    </div>
+
+                    <div class="push_7 grid_5 _ayaSlider_move col-md-6 pull-left">
+                        <div data-in="top:40;delay:1050;duration:550" class="title _ayaSlider_move" >
+                            <h1 class="_ayaSlider_move">
+                                {{ category.title }}
+                            </h1>
+                        </div>
+
+                        {% if submission %}
+                            <div data-in="top:200;left:-1000;delay:700;duration:1550" class="content-submit content _ayaSlider_move">
+                                <a href="{{ submit_content_url  }}" class="btn btn-danger" title='{{ category.title }}'>
+                                    Submit You {{ content_source|capitalize }} to a Category
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="push_7 grid_5 _ayaSlider_move col-md-6 pull-right content-contents">
+                        <div data-in="top:-100;delay:1050;duration:550" class="title _ayaSlider_move" >
+                            <h2 class="_ayaSlider_move content-contents-title bg-orange">
+                                Blog in Category
+                                <small class="pull-right">
+                                    <a href="{{ content_content_url  }}" title='View All Blog In Category'>
+                                        View all {{ content_source|capitalize }} ({{ category.total_contents }})
+                                    </a>
+                                </small>
+                            </h2>
+                        </div>
+                        {% if category.contents|length > 0 %}
+                            <!-- SLIDE 2 -->
+                            {% for key,content in category.contents %}
+
+                                {% set submit_content_url = generate_url('cms.'~content_source~'.'~content_source~'.detail', {'id':content.id}) %}
+
+                                <div data-in="left:-1000;delay:{{ (key+1)*100 }};duration:1550" class="content _ayaSlider_move">
+                                    <a href="{{ submit_content_url }}" title="{{ content.title }}">
+                                        <img src="{{ resized_image(content.content_image,48,48) }}" alt="{{ content.title }}" title="{{ content.title }}" align="left" width="48px"/>
+                                    </a>
+                                    <a href="{{ submit_content_url }}" title="{{ content.title }}">
+                                        {{ content.title }} 
+                                    </a>
+                                    <br>
+                                    <div class="business-posted-date">
+                                        <i class="fa fa-clock-o"></i> Posted:  {{ content.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+                                        <i class="fa fa-user"></i> Posted By: {{ content.author_name }} 
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+                        <div data-in="left:-1000;delay:{{ (key+1)*100 }};duration:1550" class="content-submit content _ayaSlider_move">
+                            {% if category.contents|length == 0 %}
+                                No {{ content_source|capitalize }} Submited to this Category.
+                                <br>
+                            {% endif %}
+                            {% if submission %}
+                                <a href="{{ submit_content_url  }}" class="btn btn-danger" title='Submit You {{ content_source|capitalize }} to this Category'>
+                                    Submit You {{ content_source|capitalize }} to this Category
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+    <div class="slider-navigation">
+        <a class="pull-left prev">
+            <i class="fa fa-arrow-circle-left fa-3x"></i>
+        </a>
+
+        <a class="pull-right next">
+            <i class="fa fa-arrow-circle-right fa-3x"></i>
+        </a>
+    </div>
+
+    <ul class="slideControl">
+        {% if categories|length > 0 %}
+            <!-- SLIDE 2 -->
+            {% for category in categories %}
+                <li>
+
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+
+<script>
+//set default options and initiate ayaSlider
+    jQuery(document).ready(function () {
+        jQuery('#slideShow').ayaSlider({
+            easeIn: 'easeOutBack',
+            easeOut: 'linear',
+            timer: jQuery('#header'),
+            previous: jQuery('.prev'),
+            next: jQuery('.next'),
+            list: jQuery('.slideControl'),
+            delay: 4000
+        });
+    });
+</script>

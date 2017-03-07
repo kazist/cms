@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Latest blog List",
+            "description": "Management of Latest blog.",
+            "controller": "Cms\\Addons\\Latestblog\\Controllers\\LatestblogController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.addons.latestblog",
+            "route": "cms/addons/latestblog",
+            "arguments": "",
+            "keywords": "latest, blog, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

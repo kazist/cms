@@ -1,0 +1,29 @@
+<div>
+    <div class="statics">
+
+        {% if blogs|length > 0 %}
+            {%for key,blog in blogs if key >= slider_limit %}
+
+                {% set blog_url= generate_url('cms.blogs.detail', {'id':blog.id}) %}
+                {% set category_url= generate_url('cms.blogs', {'category_id':blog.category_id}) %}
+
+                <div class="static">
+                    <div class="static-category">
+                        <a href="{{ category_url }}" title="{{ blog.category_title }}">{{ blog.category_title }}</a>
+                    </div>
+                    <div class="static-img-wrapper">
+                        <a href="{{ blog_url }}" title="{{ blog.title }}">
+                            <img src="{{ resized_image(blog.blog_image,150,150) }}" alt="{{ blog.title }}" title="{{ blog.title }}">
+                        </a>
+                    </div>
+                    <div class="static-caption">
+                        <a href="{{ blog_url }}" title="{{ blog.title }}">{{ blog.title }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+
+
+    </div>
+</div>

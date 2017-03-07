@@ -1,0 +1,70 @@
+{
+    "CmsArticles": {
+        "namespace": "Cms\\Articles",
+        "controller": "ArticlesController"
+    },
+    "CmsArticlesCategories": {
+        "namespace": "Cms\\Articles\\Categories",
+        "controller": "CategoriesController"
+    },
+    "CmsArticlesContests": {
+        "namespace": "Cms\\Articles\\Contests",
+        "controller": "ContestsController"
+    },
+    "CmsBlogs": {
+        "namespace": "Cms\\Blogs",
+        "controller": "BlogsController"
+    },
+    "CmsBlogsAbuses": {
+        "namespace": "Cms\\Blogs\\Abuses",
+        "controller": "AbusesController"
+    },
+    "CmsBlogsCategories": {
+        "namespace": "Cms\\Blogs\\Categories",
+        "controller": "CategoriesController"
+    },
+    "CmsBlogsColumnists": {
+        "namespace": "Cms\\Blogs\\Columnists",
+        "controller": "ColumnistsController"
+    },
+    "CmsBlogsTags": {
+        "namespace": "Cms\\Blogs\\Tags",
+        "controller": "TagsController"
+    },
+    "CmsContests": {
+        "namespace": "Cms\\Contests",
+        "controller": "ContestsController"
+    },
+    "CmsContestsCriteria": {
+        "namespace": "Cms\\Contests\\Criteria",
+        "controller": "CriteriesController"
+    },
+    "CmsContestsPoints": {
+        "namespace": "Cms\\Contests\\Points",
+        "controller": "PointsController"
+    },
+    "CmsContestsResults": {
+        "namespace": "Cms\\Contests\\Results",
+        "controller": "ResultsController"
+    },
+    "CmsContestsWinners": {
+        "namespace": "Cms\\Contests\\Winners",
+        "controller": "WinnersController"
+    },
+    "CmsSliders": {
+        "namespace": "Cms\\Sliders",
+        "controller": "SlidersController"
+    },
+    "CmsSlidersCategories": {
+        "namespace": "Cms\\Sliders\\Categories",
+        "controller": "CategoriesController"
+    },
+    "CmsTags": {
+        "namespace": "Cms\\Tags",
+        "controller": "TagsController"
+    },
+    "CmsBlogsContests": {
+        "namespace": "Cms\\Blogs\\Contests",
+        "controller": "ContestsController"
+    }
+}

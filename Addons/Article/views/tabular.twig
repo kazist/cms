@@ -1,0 +1,33 @@
+
+{{ set_assets('applications/Cms/Addons/Article/assets/css/style.css') }}
+
+<div class="block-tabular-articles">
+    {% if articles|length > 0 %}
+        {% for article in articles %}
+            <div class="col-sm-4">
+                <div class="tabular-article">
+
+                    <a href="{{ generate_url('cms.articles.detail', null, 0, article) }}">
+                        <img src="{{ resized_image(article.article_image, 200, 200) }}" alt="{{ article.title }}" title="{{ article.title }}" align="left" width="200px"/>
+                    </a>
+                    <div class="clearfix hidden-xs"></div>
+
+                    <h4>
+                        <a href="{{ generate_url('cms.articles.detail', null, 0, article) }}" title="{{ article.title }}" >
+                            {{ article.title|capitalize|truncate(50)|raw  }}
+                        </a>
+                    </h4>
+
+                    <small>
+                        <i class="fa fa-clock-o"> Posted On:</i>{{ article.date_created|date('Y-m-d') }} 
+                    </small>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        No Latest Articles
+    {% endif %}
+    <div class="clearfix"></div>
+</div>

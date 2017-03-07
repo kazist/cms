@@ -1,0 +1,21 @@
+{
+    "autonewsletter": [{
+            "tracking_id": "1",
+            "unique_name": "cms.articles.autonewsletter",
+            "subject": "Popular Articles This Week",
+            "body": "<h1>Popular Articles This Week</h1>\n\n{% set all_url = generate_url('cms.article.article') %}\n\n\n<p>&nbsp;</p>\n<div><!-- {% if( articles|length > 0 ) %} --> \n<!-- {% for article in articles %} -->\n\n{% set article_url = generate_url('cms.article.article.detail&id=' ~ article.id) %}\n\n<div>\n\n<a href=\"{{ article_url }}\">\n<img src=\"{{ uri.base.full}}{{article.image_file}}\" align=\"left\" width=\"100px\" />\n</a>\n<a href=\"{{ article_url }}\">\n <strong>{{ article.title }}</strong> \n</a>\n<br /> \n{{ article.profile|striptags|truncate(250) }}\n<div style=\"clear:both;\"></div>\n<hr /></div>\n<!-- {% endfor %} --> \n<!-- {% endif %} --> </div>\n\n<a href=\"{{ all_url }}\">View All</a>",
+            "frequency": "weekly",
+            "table_name": "cms_articles",
+            "limit": "10",
+            "email_limit": "10",
+            "parameter_name": "articles",
+            "category_field": "category_id",
+            "category_table": "#__cms_articles_categories",
+            "category_table_mainfield": "title"
+        }],
+    "harvester": [{
+            "tracking_id": "1",
+            "title": "Articles Writers",
+            "user_field": "created_by"
+        }]
+}

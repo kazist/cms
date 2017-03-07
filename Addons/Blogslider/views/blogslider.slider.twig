@@ -1,0 +1,47 @@
+
+{% set random_str = random(500) %}
+
+<div id="blogslider-slider_{{ random_str }}" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        {% if blogs|length > 0 %}
+            {%for key,blog in blogs if key< slider_limit %}
+                <li data-target="#blogslider-slider_{{ random_str }}" data-slide-to="{{ key }}" {% if not key %}class="active"{% endif %}>
+
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {% if blogs|length > 0 %}
+            {%for key,blog in blogs if key< slider_limit  %}
+
+                {% set blog_url= generate_url('cms.blogs.detail', {'id':blog.id}) %}
+
+                <div class="item {% if not key %}active{% endif %}">
+                    <a href="{{ blog_url }}" title="{{ blog.title }}">
+                        <img src="{{ resized_image(blog.blog_image,500,500) }}" alt="{{ blog.title }}" title="{{ blog.title }}">
+                    </a>
+                    <div class="carousel-caption">
+                        <h3>
+                            <a href="{{ blog_url }}" title="{{ blog.title }}">
+                                {{ blog.title }}
+                            </a>
+                        </h3>
+                        {{ blog.blog|striptags|truncate(150)|raw }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#blogslider-slider_{{ random_str }}" role="button" data-slide="prev" title="Previous">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#blogslider-slider_{{ random_str }}" role="button" data-slide="next" title="Next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div> <!-- Carousel -->

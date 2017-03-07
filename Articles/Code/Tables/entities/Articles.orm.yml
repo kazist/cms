@@ -1,0 +1,151 @@
+Cms\Articles\Code\Tables\Articles:
+  table: cms_articles
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      name: title
+      type: string
+      length: 255
+      nullable: false
+    contest_id:
+      name: contest_id
+      type: integer
+      length: 11
+      nullable: true
+    category_id:
+      name: category_id
+      type: integer
+      length: 11
+      nullable: false
+    article:
+      name: article
+      type: text
+      nullable: false
+    short_description:
+      name: short_description
+      type: text
+      nullable: true
+    image:
+      name: image
+      type: string
+      length: 255
+      nullable: true
+    ordering:
+      name: ordering
+      type: integer
+      length: 11
+      nullable: true
+    has_comment:
+      name: has_comment
+      type: integer
+      length: 11
+      nullable: true
+    has_opinion:
+      name: has_opinion
+      type: integer
+      length: 11
+      nullable: true
+    point_counted:
+      name: point_counted
+      type: integer
+      length: 11
+      nullable: true
+    publish_up:
+      name: publish_up
+      type: datetime
+      nullable: true
+    publish_down:
+      name: publish_down
+      type: datetime
+      nullable: true
+    contest_start_date:
+      name: contest_start_date
+      type: datetime
+      nullable: true
+    contest_end_date:
+      name: contest_end_date
+      type: datetime
+      nullable: true
+    contest_season:
+      name: contest_season
+      type: integer
+      length: 11
+      nullable: true
+    contest_closed:
+      name: contest_closed
+      type: integer
+      length: 11
+      nullable: true
+    point_accumulated:
+      name: point_accumulated
+      type: integer
+      length: 11
+      nullable: true
+    total_points:
+      name: total_points
+      type: integer
+      length: 11
+      nullable: true
+    published:
+      name: published
+      type: integer
+      length: 11
+      nullable: true
+    moderated:
+      name: moderated
+      type: integer
+      length: 11
+      nullable: true
+    featured:
+      name: featured
+      type: integer
+      length: 11
+      nullable: true
+    social_share:
+      name: social_share
+      type: integer
+      length: 11
+      nullable: true
+    hit:
+      name: hit
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    contest_id_index:
+      columns: [contest_id]
+    category_id_index:
+      columns: [category_id]
+    created_by_index:
+      columns: [created_by]
+    modified_by_index:
+      columns: [modified_by]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

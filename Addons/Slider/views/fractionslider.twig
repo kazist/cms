@@ -1,0 +1,38 @@
+{{ set_assets('applications/Cms/Addons/Slider/assets/css/fractionslider.css') }}
+
+{{ set_assets('applications/Cms/Addons/Slider/assets/js/jquery.fractionslider.js') }}
+{{ set_assets('applications/Cms/Addons/Slider/assets/js/main.js') }}
+
+<div class="slider-wrapper">
+    <div class="responisve-container">
+        <div class="slider">
+
+            <div class="fs_loader"></div>
+
+            {% if sliders|length > 0 %}
+                {% for slider in sliders %} 
+                    <div class="slide" data-in="slideLeft">
+
+                        <img    src="{{ resized_image(slider.slider_image) }}" 
+                                width="1449" height="400" alt="{{ slider.title }}" title="{{ slider.title }}"
+                                data-position="0,0" data-in="left" data-delay="" data-out="left">
+
+                        <p 		class="claim light-green"			
+                             data-position="30,30" data-in="top" data-step="1" data-out="top" data-ease-in="easeOutBounce">{{ slider.title }}</p>
+
+                        <p 		class="teaser orange" 	
+                             data-position="200,30" data-in="bottom" data-step="2" data-delay="500">{{ slider.description|striptags|raw }}</p>		
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="slide" data-in="slideLeft">
+                    <p 		class="claim orange" 	
+                         data-position="50,30" data-in="left" data-step="2" data-delay="500"> No Latest Slider</p>		
+                </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+

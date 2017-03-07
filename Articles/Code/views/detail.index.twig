@@ -1,0 +1,44 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Cms/assets/css/article.css') }}
+
+
+{% set cms_article_rate_enable = get_setting( "cms_article_rate_enable") %}
+{% set cms_article_disqus_enable = get_setting( "cms_article_disqus_enable") %}
+{% set cms_article_addthis_enable = get_setting( "cms_article_addthis_enable") %}
+
+<div class="cms-content">
+    <h1 class="component-header">{{ item.title }} </h1>
+
+    <small>
+        <i class="fa fa-clock-o"> Posted On:</i>{{ item.date_created|date('Y-m-d') }} 
+        &nbsp;&nbsp;
+        <i class="fa fa-share-alt"> Category:</i>
+        <a href="{{ generate_url('cms.articles', {'category_id':item.category_id}) }}">
+            {{ item.category_id_title}} 
+        </a>
+    </small>
+
+    {% if item.image %}
+        <div class="img-wrapper text-center">
+            <img src="{{ resized_image(item.article_image.file, 700, null , 'fit') }}" alt="{{ item.title }}" title="{{ item.title }}">
+        </div> 
+    {% endif %}
+
+    {{ item.article|raw }}
+
+    {% if cms_article_addthis_enable  %}
+        {{ include('cms.addthis.twig') }} 
+    {% endif %}
+
+    {% if cms_article_disqus_enable %}
+        {{ include('cms.disqus.twig') }} 
+    {% endif %}
+
+    {{ forms.input('id', 'hidden', item.id) }}
+
+    <div class="clearfix"></div>
+</div>
+
+

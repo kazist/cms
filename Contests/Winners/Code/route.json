@@ -1,0 +1,163 @@
+{
+    "frontend": [{
+            "title": "Winner List",
+            "description": "Management of Winners.",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\WinnersController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "cms.contests.winners",
+            "route": "cms/contests/winners",
+            "arguments": "",
+            "keywords": "winner, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Winner Detail: {{ item.name }}",
+            "description": "Winner Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\WinnersController::detailAction",
+            "unique_name": "cms.contests.winners.detail",
+            "route": "cms/contests/winners/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "winner, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::taskAction",
+            "unique_name": "admin.cms.contests.winners.task",
+            "route": "admin/cms/contests/winners/task",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": "",
+            "keywords": "winners, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Winner List",
+            "description": "Management of Winners.",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.cms.contests.winners",
+            "route": "admin/cms/contests/winners",
+            "arguments": "",
+            "keywords": "winner, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Winner",
+            "description": "Add Winner .",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::addAction",
+            "unique_name": "admin.cms.contests.winners.add",
+            "route": "admin/cms/contests/winners/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "winner, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Winner {{ item.name }}",
+            "description": "Edit Winner {{ item.name }}.",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::editAction",
+            "unique_name": "admin.cms.contests.winners.edit",
+            "route": "admin/cms/contests/winners/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "winner, edit, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Winner Detail: {{ item.name }}",
+            "description": "Winner Detail: {{ item.name }}",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::detailAction",
+            "unique_name": "admin.cms.contests.winners.detail",
+            "route": "admin/cms/contests/winners/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "winner, detail, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Winner Delete: {{ item.name }}",
+            "description": "Winner Delete: {{ item.name }}",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::deleteAction",
+            "unique_name": "admin.cms.contests.winners.delete",
+            "route": "admin/cms/contests/winners/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "winner, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Winner Save: {{ item.name }}",
+            "description": "Winner Save: {{ item.name }}",
+            "controller": "Cms\\Contests\\Winners\\Code\\Controllers\\Admin\\WinnersController::saveAction",
+            "unique_name": "admin.cms.contests.winners.save",
+            "route": "admin/cms/contests/winners/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "winner, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

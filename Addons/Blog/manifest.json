@@ -1,0 +1,10 @@
+{
+    "name": "blog",
+    "title": "Blog Listing",
+    "explanation": "Blog Listing",
+    "description": "Blog Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/blog\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/blog\/"
+}

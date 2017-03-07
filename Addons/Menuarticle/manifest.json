@@ -1,0 +1,10 @@
+{
+    "name": "menuarticle",
+    "title": "Menu Article Listing",
+    "explanation": "Menu Article Listing",
+    "description": "Menu Article Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/menuarticle\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/menuarticle\/"
+}

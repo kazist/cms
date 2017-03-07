@@ -1,0 +1,10 @@
+{
+    "name": "article",
+    "title": "Article Listing",
+    "explanation": "Article Listing",
+    "description": "Article Listing",
+    "version": 1,
+    "icon": "assets\/cms\/addons\/article\/icon.png",
+    "extension": "addon",
+    "path": "cms\/addons\/article\/"
+}

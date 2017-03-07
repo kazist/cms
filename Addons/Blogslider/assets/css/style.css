@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2015, 4:22:26 PM
+    Author     : sbc
+*/
+
+.blogslider-wrapper .blogslider-slider{
+    padding-left:0;
+    padding-right:5px;
+}
+.blogslider-wrapper .blogslider-static{
+    padding-left:0;
+    padding-right:5px;
+}
+.blogslider-wrapper .blogslider-static .static{
+    border:1px solid #EEE;
+    padding:5px;
+    margin-bottom: 10px;
+}
+.blogslider-wrapper .blogslider-static .static img{
+    width: 100%; 
+}
+.blogslider-wrapper .blogslider-static .static-img-wrapper{
+    height: 150px;
+    overflow: hidden;
+    border: 1px solid #EEE;
+}
+.blogslider-wrapper .blogslider-static .static-caption{
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 100;
+    margin-top:-20px;
+
+}  
+.blogslider-wrapper .blogslider-static .static-caption a{
+    color:white;
+}
+.blogslider-wrapper .blogslider-static .static-category{
+    background-color:#FF851B;
+    position: relative;
+    z-index: 100;
+
+}  
+.blogslider-wrapper .blogslider-static .static-category a{
+    color:white;
+}
+.blogslider-slider .carousel-inner {
+    height: 370px;
+}

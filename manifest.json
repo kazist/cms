@@ -1,0 +1,9 @@
+{
+    "name": "cms",
+    "title": "Content Management System",
+    "icon": "icons\/cms.png",
+    "extension": "component",
+    "path": "cms\/",
+    "description": "Content Management System",
+    "version": 1
+}

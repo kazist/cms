@@ -1,0 +1,69 @@
+
+{{ set_assets('applications/Cms/Addons/Latestblog/assets/css/style.css') }}
+{{ set_assets('applications/Cms/Addons/Latestblog/assets/js/latestblog.js') }}
+
+{% if show_categories %}
+    <div class="latest_blogs_block latest_contents_block">
+
+        <div>
+            <div class="col-sm-3 latest_grey_nav">
+                <!-- Nav tabs -->
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    {% if categories|length>0 %}
+                        <li role="presentation" {% if not key %}class="active"{% endif %}><a href="#blog-category-{{ category.id}}" aria-controls="blog-category-0" role="tab" data-toggle="tab" category_id="" title='All Blogs'>All Blogs</a></li>
+                            {% for key,category in categories %}
+                            <li role="presentation">
+                                <a href="#blog-category-{{ category.id}}" aria-controls="blog-category-{{ category.id }}" role="tab" data-toggle="tab" category_id="{{ category.id}}" title='{{ category.title }}'>{{ category.title }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                </ul>
+
+                <a class="btn btn-primary btn-xs btn-flat col-sm-12" href="{{ generate_url('cms.blogs.categories') }}" title='All Categories'> All Categories</a>
+                <br>
+                <br>
+            </div>
+            <div class="col-sm-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="blog-category-0">
+
+                        <h4>
+                            <a href="{{ generate_url('cms.blogs') }}" title='All Blogs'>
+                                All Blogs
+                            </a>
+                        </h4>
+
+                        <div class="category-blogs">
+                            {% include 'category.blogs.twig' ignore missing with { most_latest_blogs:most_latest_blogs, latest_blogs :latest_blogs } %}
+                        </div>
+
+                    </div>
+                    {% if categories|length>0 %}
+                        {% for key,category in categories %}
+                            <div role="tabpanel" class="tab-pane" id="blog-category-{{ category.id}}">
+
+                                <h4>
+                                    <a href="{{ generate_url('cms.blogs.categories.detail', {'id': category.id}) }}" title='{{ category.title }}'>
+                                        {{ category.title }}
+                                    </a>
+                                </h4>
+
+                                <div class="category-blogs">
+
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+{% else %}
+    {% include 'category.blogs.twig' ignore missing with { most_latest_blogs:most_latest_blogs, latest_blogs :latest_blogs } %}
+    <div class="clearfix"></div>
+{% endif %}
+
