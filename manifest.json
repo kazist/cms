@@ -1,9 +1,9 @@
 {
-    "name": "cms",
+    "name": "kazist/cms",
     "title": "Content Management System",
     "icon": "icons\/cms.png",
     "extension": "component",
-    "path": "cms\/",
+    "path": "applications/Cms/",
     "description": "Content Management System",
     "version": 1
 }
