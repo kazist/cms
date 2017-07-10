@@ -2,73 +2,86 @@
     "title": "CMS",
     "description": "Content Management System ",
     "alias": "cms",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-file-text",
     "home_link": "cms\/articles",
     "is_core": "1",
     "menulist": [{
             "title": "Articles",
             "alias": "admin_cms_articles",
             "url": "admin/cms/articles",
+            "icon": "fa fa-file-text",
             "children": [{
                     "title": "Categories",
                     "alias": "admin_cms_articles_categories",
                     "url": "admin/cms/articles/categories",
+                    "icon": "fa fa-navicon",
                     "children": []
                 }, {
                     "title": "Contests",
                     "alias": "admin_cms_articles_contests",
                     "url": "admin/cms/articles/contests",
+                    "icon": "fa fa-line-chart",
                     "children": []
                 }]
         }, {
             "title": "Blogs",
             "alias": "admin_cms_blogs",
             "url": "admin/cms/blogs",
+            "icon": "fa fa-pencil-square-o",
             "children": [{
                     "title": "Categories",
                     "alias": "admin_cms_blogs_categories",
                     "url": "admin/cms/blogs/categories",
+                    "icon": "fa fa-navicon",
                     "children": []
                 }, {
                     "title": "Columinists",
                     "alias": "admin_cms_blogs_columnists",
                     "url": "admin/cms/blogs/columnists",
+                    "icon": "fa fa-users",
                     "children": []
                 }, {
                     "title": "Contests",
                     "alias": "admin_cms_blogs_contests",
                     "url": "admin/cms/blogs/contests",
+                    "icon": "fa fa-line-chart",
                     "children": []
                 }, {
                     "title": "Abuses",
                     "alias": "admin_cms_blogs_abuses",
                     "url": "admin/cms/blogs/abuses",
+                    "icon": "fa fa-flag",
                     "children": []
                 }, {
                     "title": "Tags",
                     "alias": "admin_cms_blogs_tags",
                     "url": "admin/cms/blogs/tags",
+                    "icon": "fa fa-tags",
                     "children": []
                 }]
         }, {
             "title": "Contests",
             "alias": "admin_cms_contests",
             "url": "admin/cms/contests",
+             "icon": "fa fa-align-left",
             "children": [{
                     "title": "Categories",
                     "alias": "admin_cms_contests_categories",
                     "url": "admin/cms/contests/categories",
+                    "icon": "fa fa-navicon",
                     "children": []
                 }]
         }, {
             "title": "Sliders",
             "alias": "admin_cms_sliders",
             "url": "admin/cms/sliders",
+            "icon": "fa fa-sliders",
             "children": []
         }, {
             "title": "Tags",
             "alias": "admin_cms_tags",
             "url": "admin/cms/tags",
+            "icon": "fa fa-tags",
             "children": []
         }]
 }
