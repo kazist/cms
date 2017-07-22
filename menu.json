@@ -4,6 +4,7 @@
     "alias": "cms",
     "icon": "fa fa-file-text",
     "home_link": "cms\/articles",
+    "path": "applications/Cms",
     "is_core": "1",
     "menulist": [{
             "title": "Articles",
