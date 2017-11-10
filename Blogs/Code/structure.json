@@ -344,7 +344,8 @@
             "parameters": {
                 "general": {
                     "col": "",
-                    "row": "350"
+                    "row": "350",
+                        "editor_type": "advanced"
                 },
                 "source": [
                 ],
