@@ -1,0 +1,54 @@
+{
+    "title": "Cms",
+    "alias": "Cms",
+    "groups": [{
+            "title": "Article",
+            "settings": [{
+                    "name": "cms_disqus_name",
+                    "label": "Disqus Name",
+                    "default": "",
+                    "type": "text"
+                }, {
+                    "name": "cms_article_disqus_enable",
+                    "label": "Enable Disqus",
+                    "default": "1",
+                    "type": "yesno"
+                }, {
+                    "name": "cms_article_rate_enable",
+                    "label": "Enable Rates",
+                    "default": "1",
+                    "type": "yesno"
+                }, {
+                    "name": "cms_article_addthis_enable",
+                    "label": "Enable Addthis",
+                    "default": "1",
+                    "type": "yesno"
+                }]
+        }, {
+            "title": "Article",
+            "settings": [{
+                    "name": "cms_blog_disqus_enable",
+                    "label": "Disqus Enable",
+                    "default": "1",
+                    "type": "yesno"
+                }, {
+                    "name": "cms_blog_rate_enable",
+                    "label": "Rate Enabled",
+                    "default": "1",
+                    "type": "yesno"
+                }, {
+                    "name": "cms_blog_addthis_enable",
+                    "label": "Addthis Enabled",
+                    "default": "1",
+                    "type": "yesno"
+                }]
+        }, {
+            "title": "Contest",
+            "settings": [{
+                    "name": "cms_contest_contest_generalcontest",
+                    "label": "Contest",
+                    "default": "1",
+                    "type": "select"
+                }]
+        }]
+}

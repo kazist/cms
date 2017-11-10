@@ -1,6 +1,0 @@
-[{
-        "name": "cms_contest_contest_generalcontest",
-        "label": "Contest",
-        "default": "1",
-        "type": "select"
-    }]
