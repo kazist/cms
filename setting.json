@@ -25,7 +25,7 @@
                     "type": "yesno"
                 }]
         }, {
-            "title": "Article",
+            "title": "Blogs",
             "settings": [{
                     "name": "cms_blog_disqus_enable",
                     "label": "Disqus Enable",
