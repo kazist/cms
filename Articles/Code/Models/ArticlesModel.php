@@ -30,7 +30,8 @@ class ArticlesModel extends BaseModel {
         $query = parent:: appendSearchQuery($query);
 
         if ($category_id) {
-            $query->where('ca.category_id=' . $category_id);
+            $query->where('ca.category_id = :category_id');
+            $query->setParameter('category_id', (int) $category_id);
         }
 
         $query->orderBy('ca.id ', 'DESC');

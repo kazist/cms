@@ -17,12 +17,6 @@
                     "url": "admin/cms/articles/categories",
                     "icon": "fa fa-navicon",
                     "children": []
-                }, {
-                    "title": "Contests",
-                    "alias": "admin_cms_articles_contests",
-                    "url": "admin/cms/articles/contests",
-                    "icon": "fa fa-line-chart",
-                    "children": []
                 }]
         }, {
             "title": "Blogs",
@@ -42,12 +36,6 @@
                     "icon": "fa fa-users",
                     "children": []
                 }, {
-                    "title": "Contests",
-                    "alias": "admin_cms_blogs_contests",
-                    "url": "admin/cms/blogs/contests",
-                    "icon": "fa fa-line-chart",
-                    "children": []
-                }, {
                     "title": "Abuses",
                     "alias": "admin_cms_blogs_abuses",
                     "url": "admin/cms/blogs/abuses",
@@ -60,18 +48,7 @@
                     "icon": "fa fa-tags",
                     "children": []
                 }]
-        }, {
-            "title": "Contests",
-            "alias": "admin_cms_contests",
-            "url": "admin/cms/contests",
-             "icon": "fa fa-align-left",
-            "children": [{
-                    "title": "Categories",
-                    "alias": "admin_cms_contests_categories",
-                    "url": "admin/cms/contests/categories",
-                    "icon": "fa fa-navicon",
-                    "children": []
-                }]
+     
         }, {
             "title": "Sliders",
             "alias": "admin_cms_sliders",

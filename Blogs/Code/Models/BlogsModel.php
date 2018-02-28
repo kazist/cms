@@ -33,7 +33,8 @@ class BlogsModel extends BaseModel {
         $query = parent:: appendSearchQuery($query);
 
         if ($category_id) {
-            $query->where('cb.category_id=' . $category_id);
+            $query->where('cb.category_id = :category_id');
+            $query->setParameter('category_id', (int) $category_id);
         }
 
         $query->orderBy('cb.id ', 'DESC');
@@ -94,7 +95,7 @@ class BlogsModel extends BaseModel {
         $item_obj->title = ucwords($item->title);
 
         $item_obj->tallies = $this->getBlogContestTally($item->id);
-        
+
         if ($item_obj->contest_id) {
             $item_obj->contest = $this->getBlogContest($item->contest_id);
         }
